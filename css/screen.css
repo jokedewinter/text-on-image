@@ -1,0 +1,152 @@
+/**
+ * -------------------------------------------------------------------------------------------------
+ * Reset (Inspired by E. Meyers)
+ * As it says this will reset all the default settings a browser uses. This is not essential, 
+ * but can help reducing the inconsistencies between the handling of the same HTML element by 
+ * different browsers.
+ * -------------------------------------------------------------------------------------------------
+ */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; }
+nav ul { list-style: none; }
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none; }
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0; }
+
+/**
+ * -------------------------------------------------------------
+ * Site settings
+ * ------------------------------------------------------------- */
+
+/*
+The box-sizing property is used to alter the default CSS box model used to calculate 
+width and height of the elements. It is possible to use this property to emulate the 
+behavior of browsers that do not correctly support the CSS box model specification.
+
+SOURCE: https://developer.mozilla.org/en/docs/Web/CSS/box-sizing
+*/
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-text-size-adjust: 100%;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Poppins', Verdana, sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.5;
+	background: #fff;
+	color: #333;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+/**
+ * -------------------------------------------------------------
+ * Page content
+ * ------------------------------------------------------------- */
+
+.wrapper {
+	clear: both;
+	width: 70%;
+	margin: 0 auto;
+	padding: 2em 0;
+}
+
+header {
+	width: 100%;
+	height: 500px;	
+
+	background-image: url('../images/leaves.jpg');
+	background-repeat: no-repeat;
+	background-position: left top;
+	
+	/*
+	The two main values background-size can take are cover and contain.
+	
+	Cover will scale the background image to be as large as possible so that the background area 
+	is completely covered by the background image. Some parts of the background image may not be 
+	in view within the background positioning area.
+	
+	Contain will scale the image to the largest size such that both its width and its height 
+	can fit inside the content area
+	*/
+	background-size: cover;
+
+	/*
+	You can use rgb values to set the colour of something. It take three values: red, green and blue.
+	Black is rgb(0, 0, 0) and white is rgb(256, 256, 256). Any other colour can be made by using values 
+	between 0 and 256. 
+	
+	If you want a transparent version of your colour, you can use rgba. This takes a fourth value which
+	is amount of transparancy you want. The value shoulb be between 0 and 1.
+	*/
+	color: rgba(256, 256, 256, 0.7);
+}
+
+.header__text {
+	width: 100%;
+	float: left; 
+	margin: 5em 0;
+	padding: 3em 2em;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin-bottom: 2em;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 1em;
+}
+
+p {
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin-bottom: 1em;
+}
+
+/**
+ * -------------------------------------------------------------
+ * Media queries 
+ * To change styles between different viewport widths.
+ * ------------------------------------------------------------- */
+
+@media screen and ( min-width: 600px ) {
+	
+	.wrapper { max-width: 450px; }
+}
